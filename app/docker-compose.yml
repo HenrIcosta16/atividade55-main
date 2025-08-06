@@ -20,6 +20,9 @@ services:
       - DATABASE_URL=postgresql://flaskuser:flaskpass@postgres-db:5432/flaskdb
     depends_on:
       - postgres-db
+    ports:
+    - "5000:5000"  # <-- adiciona essa linha para expor porta
+
 
   postgres-db:
     image: postgres:13-alpine

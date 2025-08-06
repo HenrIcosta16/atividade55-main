@@ -30,3 +30,13 @@ Este projeto configura uma aplicação Flask que se conecta a um banco de dados 
 
 
             file:///home/Henrique/Pictures/Screenshots/Screenshot%20from%202025-07-25%2018-15-25.png
+
+
+
+# com docker composed 
+ 
+  sudo docker-compose up --build
+
+  Henrix16@Henrix16:~/Downloads/atividade44-main$ cd ~/Downloads/atividade44-main/app sudo docker-compose up --build
+
+# crie um diretorio demonstrando as imagens funcionando com  o endpoint
