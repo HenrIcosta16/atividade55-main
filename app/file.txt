@@ -1,0 +1,343 @@
+Henrix16@Henrix16:~/Downloads/atividade44-main/app$ sudo docker-compose up --build
+Building flask-app-2
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+Sending build context to Docker daemon  12.29kB
+Step 1/11 : FROM python:3.9-slim
+3.9-slim: Pulling from library/python
+59e22667830b: Pull complete 
+91067d9e3807: Pull complete 
+02ba7daa58b6: Pull complete 
+58b24570cddd: Pull complete 
+Digest: sha256:4b826e2ca2191c24a03bdbf0c342a73c6ee4ce929eac5ebc47fef78f66b839d6
+Status: Downloaded newer image for python:3.9-slim
+ ---> 563a905f7a66
+Step 2/11 : WORKDIR /app
+ ---> Running in 278a23d61987
+ ---> Removed intermediate container 278a23d61987
+ ---> 775947743f90
+Step 3/11 : RUN python3 -m venv /venv
+ ---> Running in db2392524250
+ ---> Removed intermediate container db2392524250
+ ---> 91e4c318ed04
+Step 4/11 : ENV PATH="/venv/bin:$PATH"
+ ---> Running in 09945f4451b7
+ ---> Removed intermediate container 09945f4451b7
+ ---> 0d60bdf3b663
+Step 5/11 : COPY requirements.txt .
+ ---> f891235a4d3d
+Step 6/11 : RUN pip install --no-cache-dir -r requirements.txt
+ ---> Running in 9c628bd6d042
+Collecting Flask==3.1.1
+  Downloading flask-3.1.1-py3-none-any.whl (103 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 103.3/103.3 kB 1.8 MB/s eta 0:00:00
+Collecting psycopg2-binary==2.9.10
+  Downloading psycopg2_binary-2.9.10-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.0 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.0/3.0 MB 16.1 MB/s eta 0:00:00
+Collecting Flask-SQLAlchemy==3.1.1
+  Downloading flask_sqlalchemy-3.1.1-py3-none-any.whl (25 kB)
+Collecting SQLAlchemy==2.0.41
+  Downloading sqlalchemy-2.0.41-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.2 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.2/3.2 MB 43.5 MB/s eta 0:00:00
+Collecting itsdangerous>=2.2.0
+  Downloading itsdangerous-2.2.0-py3-none-any.whl (16 kB)
+Collecting blinker>=1.9.0
+  Downloading blinker-1.9.0-py3-none-any.whl (8.5 kB)
+Collecting click>=8.1.3
+  Downloading click-8.1.8-py3-none-any.whl (98 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 98.2/98.2 kB 160.5 MB/s eta 0:00:00
+Collecting markupsafe>=2.1.1
+  Downloading MarkupSafe-3.0.2-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (20 kB)
+Collecting jinja2>=3.1.2
+  Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 134.9/134.9 kB 241.4 MB/s eta 0:00:00
+Collecting importlib-metadata>=3.6.0
+  Downloading importlib_metadata-8.7.0-py3-none-any.whl (27 kB)
+Collecting werkzeug>=3.1.0
+  Downloading werkzeug-3.1.3-py3-none-any.whl (224 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 224.5/224.5 kB 81.1 MB/s eta 0:00:00
+Collecting typing-extensions>=4.6.0
+  Downloading typing_extensions-4.14.1-py3-none-any.whl (43 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 43.9/43.9 kB 72.0 MB/s eta 0:00:00
+Collecting greenlet>=1
+  Downloading greenlet-3.2.3-cp39-cp39-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (580 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 580.8/580.8 kB 68.5 MB/s eta 0:00:00
+Collecting zipp>=3.20
+  Downloading zipp-3.23.0-py3-none-any.whl (10 kB)
+Installing collected packages: zipp, typing-extensions, psycopg2-binary, markupsafe, itsdangerous, greenlet, click, blinker, werkzeug, SQLAlchemy, jinja2, importlib-metadata, Flask, Flask-SQLAlchemy
+Successfully installed Flask-3.1.1 Flask-SQLAlchemy-3.1.1 SQLAlchemy-2.0.41 blinker-1.9.0 click-8.1.8 greenlet-3.2.3 importlib-metadata-8.7.0 itsdangerous-2.2.0 jinja2-3.1.6 markupsafe-3.0.2 psycopg2-binary-2.9.10 typing-extensions-4.14.1 werkzeug-3.1.3 zipp-3.23.0
+
+[notice] A new release of pip is available: 23.0.1 -> 25.2
+[notice] To update, run: pip install --upgrade pip
+ ---> Removed intermediate container 9c628bd6d042
+ ---> 16a607d43658
+Step 7/11 : COPY . .
+ ---> 14486c31e065
+Step 8/11 : ENV FLASK_APP=app
+ ---> Running in 043a68ab6b73
+ ---> Removed intermediate container 043a68ab6b73
+ ---> 585c0b2d7583
+Step 9/11 : ENV FLASK_ENV=development
+ ---> Running in ccdcc599434e
+ ---> Removed intermediate container ccdcc599434e
+ ---> a81a8c4ea446
+Step 10/11 : EXPOSE 5000
+ ---> Running in d9fe2d32ac9c
+ ---> Removed intermediate container d9fe2d32ac9c
+ ---> 086e235a7fa7
+Step 11/11 : CMD ["flask", "run", "--host=0.0.0.0"]
+ ---> Running in a136557adef9
+ ---> Removed intermediate container a136557adef9
+ ---> c2c9a1500a80
+Successfully built c2c9a1500a80
+Successfully tagged app_flask-app-2:latest
+Building flask-app-1
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+Sending build context to Docker daemon  12.29kB
+Step 1/5 : FROM postgres:13-alpine
+ ---> 920d587d8d93
+Step 2/5 : ENV POSTGRES_DB=flaskdb
+ ---> Running in 9c8f8d167a30
+ ---> Removed intermediate container 9c8f8d167a30
+ ---> 1ea7f5c81c80
+Step 3/5 : ENV POSTGRES_USER=flaskuser
+ ---> Running in 92782a8da6d1
+ ---> Removed intermediate container 92782a8da6d1
+ ---> d800be8fa774
+Step 4/5 : ENV POSTGRES_PASSWORD=flaskpass
+ ---> Running in fc590724cf0a
+ ---> Removed intermediate container fc590724cf0a
+ ---> 70ed9b5a7a9f
+Step 5/5 : EXPOSE 5432
+ ---> Running in 35edffa80118
+ ---> Removed intermediate container 35edffa80118
+ ---> 8e4770d3a2e2
+Successfully built 8e4770d3a2e2
+Successfully tagged app_flask-app-1:latest
+Pulling nginx (nginx:alpine)...
+alpine: Pulling from library/nginx
+9824c27679d3: Already exists
+a5585638209e: Pull complete
+fd372c3c84a2: Pull complete
+958a74d6a238: Pull complete
+c1d2dc189e38: Pull complete
+828fa206d77b: Pull complete
+bdaad27fd04a: Pull complete
+f23865b38cc6: Pull complete
+Digest: sha256:d67ea0d64d518b1bb04acde3b00f722ac3e9764b3209a9b0a98924ba35e4b779
+Status: Downloaded newer image for nginx:alpine
+Creating postgres-db ... done
+Creating flask-app-2 ... done
+Creating flask-app-1 ... done
+Creating nginx-balancer ... done
+Attaching to postgres-db, flask-app-1, flask-app-2, nginx-balancer
+flask-app-1    | The files belonging to this database system will be owned by user "postgres".
+flask-app-1    | This user must also own the server process.
+flask-app-1    | 
+flask-app-1    | The database cluster will be initialized with locale "en_US.utf8".
+flask-app-1    | The default database encoding has accordingly been set to "UTF8".
+flask-app-1    | The default text search configuration will be set to "english".
+flask-app-1    | 
+flask-app-1    | Data page checksums are disabled.
+flask-app-1    | 
+flask-app-1    | fixing permissions on existing directory /var/lib/postgresql/data ... ok
+flask-app-1    | creating subdirectories ... ok
+flask-app-1    | selecting dynamic shared memory implementation ... posix
+flask-app-1    | selecting default max_connections ... 100
+flask-app-1    | selecting default shared_buffers ... 128MB
+nginx-balancer | /docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
+nginx-balancer | /docker-entrypoint.sh: Looking for shell scripts in /docker-entrypoint.d/
+flask-app-1    | selecting default time zone ... UTC
+flask-app-1    | creating configuration files ... ok
+flask-app-1    | running bootstrap script ... ok
+nginx-balancer | /docker-entrypoint.sh: Launching /docker-entrypoint.d/10-listen-on-ipv6-by-default.sh
+postgres-db    | The files belonging to this database system will be owned by user "postgres".
+postgres-db    | This user must also own the server process.
+postgres-db    | 
+postgres-db    | The database cluster will be initialized with locale "en_US.utf8".
+postgres-db    | The default database encoding has accordingly been set to "UTF8".
+postgres-db    | The default text search configuration will be set to "english".
+postgres-db    | 
+postgres-db    | Data page checksums are disabled.
+postgres-db    | 
+postgres-db    | fixing permissions on existing directory /var/lib/postgresql/data ... ok
+postgres-db    | creating subdirectories ... ok
+postgres-db    | selecting dynamic shared memory implementation ... posix
+postgres-db    | selecting default max_connections ... 100
+postgres-db    | selecting default shared_buffers ... 128MB
+postgres-db    | selecting default time zone ... UTC
+postgres-db    | creating configuration files ... ok
+postgres-db    | running bootstrap script ... ok
+postgres-db    | performing post-bootstrap initialization ... sh: locale: not found
+postgres-db    | 2025-08-06 14:50:05.274 UTC [36] WARNING:  no usable system locales were found
+nginx-balancer | 10-listen-on-ipv6-by-default.sh: info: Getting the checksum of /etc/nginx/conf.d/default.conf
+nginx-balancer | 10-listen-on-ipv6-by-default.sh: info: Enabled listen on IPv6 in /etc/nginx/conf.d/default.conf
+nginx-balancer | /docker-entrypoint.sh: Sourcing /docker-entrypoint.d/15-local-resolvers.envsh
+nginx-balancer | /docker-entrypoint.sh: Launching /docker-entrypoint.d/20-envsubst-on-templates.sh
+nginx-balancer | /docker-entrypoint.sh: Launching /docker-entrypoint.d/30-tune-worker-processes.sh
+nginx-balancer | /docker-entrypoint.sh: Configuration complete; ready for start up
+flask-app-1    | performing post-bootstrap initialization ... sh: locale: not found
+flask-app-1    | 2025-08-06 14:50:05.542 UTC [35] WARNING:  no usable system locales were found
+flask-app-2    | Traceback (most recent call last):
+flask-app-2    |   File "/venv/bin/flask", line 8, in <module>
+flask-app-2    |     sys.exit(main())
+flask-app-2    |   File "/venv/lib/python3.9/site-packages/flask/cli.py", line 1131, in main
+flask-app-2    |     cli.main()
+flask-app-2    |   File "/venv/lib/python3.9/site-packages/click/core.py", line 1082, in main
+flask-app-2    |     rv = self.invoke(ctx)
+flask-app-2    |   File "/venv/lib/python3.9/site-packages/click/core.py", line 1697, in invoke
+flask-app-2    |     return _process_result(sub_ctx.command.invoke(sub_ctx))
+flask-app-2    |   File "/venv/lib/python3.9/site-packages/click/core.py", line 1443, in invoke
+flask-app-2    |     return ctx.invoke(self.callback, **ctx.params)
+flask-app-2    |   File "/venv/lib/python3.9/site-packages/click/core.py", line 788, in invoke
+flask-app-2    |     return __callback(*args, **kwargs)
+flask-app-2    |   File "/venv/lib/python3.9/site-packages/click/decorators.py", line 92, in new_func
+flask-app-2    |     return ctx.invoke(f, obj, *args, **kwargs)
+flask-app-2    |   File "/venv/lib/python3.9/site-packages/click/core.py", line 788, in invoke
+flask-app-2    |     return __callback(*args, **kwargs)
+flask-app-2    |   File "/venv/lib/python3.9/site-packages/flask/cli.py", line 979, in run_command
+flask-app-2    |     raise e from None
+flask-app-2    |   File "/venv/lib/python3.9/site-packages/flask/cli.py", line 963, in run_command
+flask-app-2    |     app: WSGIApplication = info.load_app()  # pyright: ignore
+flask-app-2    |   File "/venv/lib/python3.9/site-packages/flask/cli.py", line 349, in load_app
+flask-app-2    |     app = locate_app(import_name, name)
+flask-app-2    |   File "/venv/lib/python3.9/site-packages/flask/cli.py", line 245, in locate_app
+flask-app-2    |     __import__(module_name)
+flask-app-2    |   File "/app/app.py", line 24, in <module>
+flask-app-2    |     db.create_all()
+flask-app-2    |   File "/venv/lib/python3.9/site-packages/flask_sqlalchemy/extension.py", line 900, in create_all
+flask-app-2    |     self._call_for_binds(bind_key, "create_all")
+flask-app-2    |   File "/venv/lib/python3.9/site-packages/flask_sqlalchemy/extension.py", line 881, in _call_for_binds
+flask-app-2    |     getattr(metadata, op_name)(bind=engine)
+flask-app-2    |   File "/venv/lib/python3.9/site-packages/sqlalchemy/sql/schema.py", line 5924, in create_all
+flask-app-2    |     bind._run_ddl_visitor(
+flask-app-2    |   File "/venv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 3247, in _run_ddl_visitor
+flask-app-2    |     with self.begin() as conn:
+flask-app-2    |   File "/usr/local/lib/python3.9/contextlib.py", line 119, in __enter__
+flask-app-2    |     return next(self.gen)
+flask-app-2    |   File "/venv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 3237, in begin
+flask-app-2    |     with self.connect() as conn:
+flask-app-2    |   File "/venv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 3273, in connect
+flask-app-2    |     return self._connection_cls(self)
+flask-app-2    |   File "/venv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 147, in __init__
+flask-app-2    |     Connection._handle_dbapi_exception_noconnection(
+flask-app-2    |   File "/venv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 2436, in _handle_dbapi_exception_noconnection
+flask-app-2    |     raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+flask-app-2    |   File "/venv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 145, in __init__
+flask-app-2    |     self._dbapi_connection = engine.raw_connection()
+flask-app-2    |   File "/venv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 3297, in raw_connection
+flask-app-2    |     return self.pool.connect()
+flask-app-2    |   File "/venv/lib/python3.9/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+flask-app-2    |     return _ConnectionFairy._checkout(self)
+flask-app-2    |   File "/venv/lib/python3.9/site-packages/sqlalchemy/pool/base.py", line 1264, in _checkout
+flask-app-2    |     fairy = _ConnectionRecord.checkout(pool)
+flask-app-2    |   File "/venv/lib/python3.9/site-packages/sqlalchemy/pool/base.py", line 713, in checkout
+flask-app-2    |     rec = pool._do_get()
+flask-app-2    |   File "/venv/lib/python3.9/site-packages/sqlalchemy/pool/impl.py", line 180, in _do_get
+flask-app-2    |     self._dec_overflow()
+flask-app-2    |   File "/venv/lib/python3.9/site-packages/sqlalchemy/util/langhelpers.py", line 224, in __exit__
+flask-app-2    |     raise exc_value.with_traceback(exc_tb)
+flask-app-2    |   File "/venv/lib/python3.9/site-packages/sqlalchemy/pool/impl.py", line 177, in _do_get
+flask-app-2    |     return self._create_connection()
+flask-app-2    |   File "/venv/lib/python3.9/site-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+flask-app-2    |     return _ConnectionRecord(self)
+flask-app-2    |   File "/venv/lib/python3.9/site-packages/sqlalchemy/pool/base.py", line 675, in __init__
+flask-app-2    |     self.__connect()
+flask-app-2    |   File "/venv/lib/python3.9/site-packages/sqlalchemy/pool/base.py", line 902, in __connect
+flask-app-2    |     pool.logger.debug("Error on connect(): %s", e)
+flask-app-2    |   File "/venv/lib/python3.9/site-packages/sqlalchemy/util/langhelpers.py", line 224, in __exit__
+flask-app-2    |     raise exc_value.with_traceback(exc_tb)
+flask-app-2    |   File "/venv/lib/python3.9/site-packages/sqlalchemy/pool/base.py", line 897, in __connect
+flask-app-2    |     self.dbapi_connection = connection = pool._invoke_creator(self)
+flask-app-2    |   File "/venv/lib/python3.9/site-packages/sqlalchemy/engine/create.py", line 646, in connect
+flask-app-2    |     return dialect.connect(*cargs, **cparams)
+flask-app-2    |   File "/venv/lib/python3.9/site-packages/sqlalchemy/engine/default.py", line 625, in connect
+flask-app-2    |     return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+flask-app-2    |   File "/venv/lib/python3.9/site-packages/psycopg2/__init__.py", line 122, in connect
+flask-app-2    |     conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+flask-app-2    | sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) connection to server at "postgres-db" (172.18.0.2), port 5432 failed: Connection refused
+flask-app-2    |        Is the server running on that host and accepting TCP/IP connections?
+flask-app-2    | 
+flask-app-2    | (Background on this error at: https://sqlalche.me/e/20/e3q8)
+postgres-db    | ok
+flask-app-1    | ok
+flask-app-2 exited with code 1
+postgres-db    | syncing data to disk ... ok
+postgres-db    | 
+postgres-db    | 
+postgres-db    | Success. You can now start the database server using:
+postgres-db    | 
+postgres-db    |     pg_ctl -D /var/lib/postgresql/data -l logfile start
+postgres-db    | 
+postgres-db    | initdb: warning: enabling "trust" authentication for local connections
+postgres-db    | You can change this by editing pg_hba.conf or using the option -A, or
+postgres-db    | --auth-local and --auth-host, the next time you run initdb.
+flask-app-1    | syncing data to disk ... ok
+flask-app-1    | 
+flask-app-1    | 
+flask-app-1    | Success. You can now start the database server using:
+flask-app-1    | 
+flask-app-1    |     pg_ctl -D /var/lib/postgresql/data -l logfile start
+flask-app-1    | 
+flask-app-1    | initdb: warning: enabling "trust" authentication for local connections
+flask-app-1    | You can change this by editing pg_hba.conf or using the option -A, or
+flask-app-1    | --auth-local and --auth-host, the next time you run initdb.
+postgres-db    | waiting for server to start....2025-08-06 14:50:06.851 UTC [42] LOG:  starting PostgreSQL 13.21 on x86_64-pc-linux-musl, compiled by gcc (Alpine 14.2.0) 14.2.0, 64-bit
+postgres-db    | 2025-08-06 14:50:06.857 UTC [42] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+postgres-db    | 2025-08-06 14:50:06.867 UTC [43] LOG:  database system was shut down at 2025-08-06 14:50:05 UTC
+flask-app-1    | waiting for server to start....2025-08-06 14:50:06.868 UTC [41] LOG:  starting PostgreSQL 13.21 on x86_64-pc-linux-musl, compiled by gcc (Alpine 14.2.0) 14.2.0, 64-bit
+flask-app-1    | 2025-08-06 14:50:06.873 UTC [41] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+postgres-db    | 2025-08-06 14:50:06.879 UTC [42] LOG:  database system is ready to accept connections
+flask-app-1    | 2025-08-06 14:50:06.881 UTC [42] LOG:  database system was shut down at 2025-08-06 14:50:06 UTC
+flask-app-1    | 2025-08-06 14:50:06.886 UTC [41] LOG:  database system is ready to accept connections
+postgres-db    |  done
+postgres-db    | server started
+flask-app-1    |  done
+flask-app-1    | server started
+flask-app-1    | CREATE DATABASE
+flask-app-1    | 
+flask-app-1    | 
+flask-app-1    | /usr/local/bin/docker-entrypoint.sh: ignoring /docker-entrypoint-initdb.d/*
+flask-app-1    | 
+flask-app-1    | waiting for server to shut down....2025-08-06 14:50:07.256 UTC [41] LOG:  received fast shutdown request
+postgres-db    | CREATE DATABASE
+postgres-db    | 
+postgres-db    | 
+postgres-db    | /usr/local/bin/docker-entrypoint.sh: ignoring /docker-entrypoint-initdb.d/*
+postgres-db    | 
+postgres-db    | waiting for server to shut down....2025-08-06 14:50:07.257 UTC [42] LOG:  received fast shutdown request
+flask-app-1    | 2025-08-06 14:50:07.259 UTC [41] LOG:  aborting any active transactions
+postgres-db    | 2025-08-06 14:50:07.259 UTC [42] LOG:  aborting any active transactions
+postgres-db    | 2025-08-06 14:50:07.263 UTC [42] LOG:  background worker "logical replication launcher" (PID 49) exited with exit code 1
+flask-app-1    | 2025-08-06 14:50:07.263 UTC [41] LOG:  background worker "logical replication launcher" (PID 48) exited with exit code 1
+flask-app-1    | 2025-08-06 14:50:07.265 UTC [43] LOG:  shutting down
+postgres-db    | 2025-08-06 14:50:07.265 UTC [44] LOG:  shutting down
+flask-app-1    | 2025-08-06 14:50:07.290 UTC [41] LOG:  database system is shut down
+postgres-db    | 2025-08-06 14:50:07.292 UTC [42] LOG:  database system is shut down
+postgres-db    |  done
+postgres-db    | server stopped
+flask-app-1    |  done
+flask-app-1    | server stopped
+postgres-db    | 
+postgres-db    | PostgreSQL init process complete; ready for start up.
+postgres-db    | 
+flask-app-1    | 
+flask-app-1    | PostgreSQL init process complete; ready for start up.
+flask-app-1    | 
+postgres-db    | 2025-08-06 14:50:07.378 UTC [1] LOG:  starting PostgreSQL 13.21 on x86_64-pc-linux-musl, compiled by gcc (Alpine 14.2.0) 14.2.0, 64-bit
+postgres-db    | 2025-08-06 14:50:07.378 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+postgres-db    | 2025-08-06 14:50:07.378 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+postgres-db    | 2025-08-06 14:50:07.382 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+flask-app-1    | 2025-08-06 14:50:07.387 UTC [1] LOG:  starting PostgreSQL 13.21 on x86_64-pc-linux-musl, compiled by gcc (Alpine 14.2.0) 14.2.0, 64-bit
+flask-app-1    | 2025-08-06 14:50:07.387 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+flask-app-1    | 2025-08-06 14:50:07.387 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+postgres-db    | 2025-08-06 14:50:07.387 UTC [57] LOG:  database system was shut down at 2025-08-06 14:50:07 UTC
+flask-app-1    | 2025-08-06 14:50:07.395 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+postgres-db    | 2025-08-06 14:50:07.396 UTC [1] LOG:  database system is ready to accept connections
+flask-app-1    | 2025-08-06 14:50:07.405 UTC [56] LOG:  database system was shut down at 2025-08-06 14:50:07 UTC
+flask-app-1    | 2025-08-06 14:50:07.413 UTC [1] LOG:  database system is ready to accept connections
